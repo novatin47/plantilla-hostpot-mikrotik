@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikroNET</title>
+    <link rel="stylesheet" href="assets/css/mikronet.css">
+    <script src="assets/js/md5.js"></script>  
+</head>
+
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script>
+		var loginError = "";
+		var loginOption = 0;
+
+        function doLogin() {
+            var vc = document.getElementById("voucherInput").value;
+			setStorageValue("activeVoucher", vc);
+            document.sendin.username.value = vc;
+			if(loginOption == 0){
+				document.sendin.password.value = hexMD5('$(chap-id)' + "" + '$(chap-challenge)');
+			}else{
+				document.sendin.password.value = hexMD5('$(chap-id)' + vc + '$(chap-challenge)');
+			}
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+	$(if error)
+	<script>
+        loginError = "$(error)";
+    </script>
+	$(endif)
+
+    <div class="login-container">
+        <div class="arriba">
+            <!-- logo ip mac anuncio -->
+            <div>
+                <img class="logotipo" src="assets/logotipo.png">
+            </div>
+            <div class="scroll-left">
+                <span>RECARGAS BAIT Y TELCEL</span>
+            </div>
+            <div class="blinking1">
+                <span id="idparpadeante">DESCONECTADO</span>
+            </div>
+            <div class="info">
+                <div class="info-ip">IP:
+                    <span>$(ip)</span>
+                </div>
+                <div class="info-mac">MAC:
+                    <span>$(mac)</span>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <!-- ficha enviar -->
+            <div>
+                <input type="text" id="voucherInput" name="username" value="$(username)" placeholder="Aqui tu ficha">
+            </div>
+            <div>
+                <button type="button" onClick="doLogin(); return false" class="btn btn-primary">Conectar</button>
+                <button type="button" id="idOpenModal" onClick="openDialog(); return false" class="btn btn-secondary">Tarifas</button>
+            </div>
+            
+            
+        </div>
+        <div class="abajo">
+            <!-- tarifa whatsapp -->
+            <dialog id="idModal">
+                <h2>TARIFAS</h2>
+                <div style="color:orange; font-size: 16px; margin-bottom: 1rem;">
+					Si el vendedor no respeta estos precios, favor de reportar.
+				</div>
+                <!-- <table class="table" style="display: none;"> -->
+				<div class="divtabla">
+                    <table id="idtable">
+                    </table>
+                </div>
+                <button id="closeDialogBtn" onclick="closeDialog()" class="btn btn-primary" style="margin-top: 1rem;">Cerrar</button>
+            </dialog>
+
+            <div class="footer">
+                <span class="footers">
+                <a href="https://wa.me/+527451165371">Contrata Internet para tu hogar<br>
+                <img src="assets/whatsapp.svg"/>
+                </a> 745 134 6203
+            </div>
+        </div>
+
+        <!--LOADING-->
+        <div id="loaderDiv" class="spinner hidden">
+            <img src="assets/loading.svg" />
+        </div>
+    </div>
+
+    <script>
+        var listaTarifas = [
+                {
+                    nombre: '1 Hora',
+                    precio: '$ 5'
+                },
+                {
+                    nombre: '3 Horas',
+                    precio: '$ 10'
+                },
+                {
+                    nombre: '7 Horas',
+                    precio: '$ 20'
+                },
+                {
+                    nombre: '24 Horas',
+                    precio: '$ 40'
+                },
+            ];
+    </script>
+    
+    <script src="assets/js/mikronet.js"></script>
+
+</body>
+</html>

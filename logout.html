@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikroNET</title>
+    <link rel="stylesheet" href="assets/css/mikronet.css">
+</head>
+
+<body>
+	<div class="login-container">
+			<form action="$(link-logout)" name="logout">
+				<input type="hidden" name="erase-cookie" value="true" />
+			</form>
+
+			<div class="arriba">
+				<!-- logo ip mac anuncio -->
+				<div>
+					<img class="logotipo" src="assets/logotipo.png">
+				</div>
+				<div class="scroll-left">
+					<span>RECARGAS BAIT Y TELCEL</span>
+				</div>
+				<div class="blinking3">
+					<span id="idparpadeante">PAUSADO</span>
+				</div>
+				<div class="info">
+					<div class="info-ip">IP:
+						<span>$(ip)</span>
+					</div>
+					<div class="info-mac">MAC:
+						<span>$(mac)</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="centro">
+				<div>
+					<button type="button"onClick="resume(); return false" class="btn btn-primary">CONTINUAR</button>
+				</div>
+			</div>
+
+			<div class="abajo">
+				<div class="footer">
+					<span class="footers">
+					<a href="https://wa.me/+527451165371">Contrata Internet para tu hogar<br>
+					<img src="assets/whatsapp.svg"/>
+					</a> 745 134 6203
+				</div>
+			</div>
+			<div id="loaderDiv" class="spinner hidden">
+				<center>
+					<img src="assets/loading.svg" />
+				</center>
+			</div>
+	</div>
+
+	<script src="assets/js/mikronet.js"></script>
+</body>
+
+</html>

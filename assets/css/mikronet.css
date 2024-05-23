@@ -1,0 +1,225 @@
+body {
+    /* display: flex; */
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3d4044;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    /* text-align: left; */
+}
+
+.logotipo{
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.scroll-left {
+    border-radius: 1px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    font: calc(16px + (10 - 8) * ((100vw - 300px) / (1366 - 300))) "Lucida Console";
+    font-weight: thin !important;
+    letter-spacing: 1px;
+    /*background: #181818;*/
+    margin-top: 10px;
+    margin-bottom: 1rem;
+    color: #2ef8a0
+}
+
+.scroll-left span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 8s linear infinite
+}
+
+
+@keyframes scroll-left {
+    to {
+        transform: translateX(-100%)
+    }
+}
+
+.blinking1{
+    /*color: red;*/
+    margin-bottom: 1rem;
+    color: red;
+    font-size: 14px;
+    animation:blinkingText1 1.5s infinite;
+}
+@keyframes blinkingText1{
+    0%{     color: red;    }
+    49%{    color: red; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: red;    }
+}
+
+.blinking2{
+    /*color: red;*/
+    margin-bottom: 1rem;
+    color: rgb(43, 255, 0);
+    font-size: 14px;
+    animation:blinkingText2 1.5s infinite;
+}
+@keyframes blinkingText2{
+    0%{     color: rgb(43, 255, 0);    }
+    49%{    color: rgb(43, 255, 0); }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: rgb(43, 255, 0);    }
+}
+
+.blinking3{
+    /*color: red;*/
+    margin-bottom: 1rem;
+    color: orange;
+    font-size: 14px;
+    animation:blinkingText3 1.5s infinite;
+}
+@keyframes blinkingText3{
+    0%{     color: orange;    }
+    49%{    color: orange; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: orange;    }
+}
+
+.info {
+    color: #D0D3D4;
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+.info-ip {
+    width: auto;
+    display: inline-block;
+    margin-right: 10px
+}
+
+.info-ip span{
+    color: #85929E;
+}
+
+.info-mac {	
+    width: auto;
+    display: inline-block
+}
+
+.info-mac span{
+    color: #85929E;
+}
+
+.info-status {
+    width: 100%;
+    padding: 10px;
+}
+
+.spinner { 
+    position: fixed; 
+    z-index: 9999; 
+    /*opacity: 90%; */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    /*background: white; */
+    top: 0; 
+    left: 0;
+    width: 100%; 
+} 
+
+.spinner > img { 
+    width: 100px; 
+} 
+
+.spinner.hidden {
+    animation: fadeOut 1s; animation-fill-mode: forwards;
+    display: none
+}
+
+.footers a {
+    text-decoration: none;
+    color: #f1c40f
+}
+
+.footers a:hover {
+    color: #3498db
+}
+.divtabla{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+dialog{
+    background-color: #191e2d;
+    color: #bfbfbf;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: #4cd137;
+    max-width: 250px;
+}
+
+.login-container {
+    background-color: #191e2d;
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    /*width: 100%;*/
+    margin: auto;
+    margin-top: 2em;
+}
+
+.login-container h1 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+.login-container h4 {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    color: #666;
+}
+.form-group {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+input {
+    width: 92%;
+    padding: 0.7rem;
+    border: 1px solid #060d41;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #007BFF;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #565e64;
+}
