@@ -90,7 +90,7 @@ traffic-limit = user $(username) has reached traffic limit
 # User is authenticated by RADIUS server, but no response is received from it,
 # following error will be shown.
 
-radius-timeout = RADIUS server is not responding
+radius-timeout = servidor RADIUS no responde
 
 # auth-in-progress
 # Authorization in progress. Client already has issued an authorization request
